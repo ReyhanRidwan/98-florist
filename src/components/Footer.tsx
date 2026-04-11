@@ -1,0 +1,88 @@
+import { Instagram, Phone, MapPin, Mail } from 'lucide-react';
+
+const LOGO_URL = "https://scontent.xx.fbcdn.net/v/t1.15752-9/666637501_902738225919407_1453720350393172042_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=9f807c&_nc_ohc=V2HmJpghRcUQ7kNvwFHNxEJ&_nc_oc=Adr8Gj79HyD7Fk7Ds0T5O7sMbqxefbwrn4xfTeMKWFK6hp0l2BcNknPe0sPOx4Y-_39xKD8izrr5PpeBYSuWp7OW&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&_nc_ss=7a32e&oh=03_Q7cD5AF25lpgCkctKosfAoCB4ybv-MJ1UQxRYqoeWMuLjtqyZg&oe=6A019323";
+
+export default function Footer() {
+  return (
+    <footer className="bg-white pt-24 pb-12 border-t border-gray-100">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          {/* Brand */}
+          <div className="space-y-6">
+            <div className="flex items-center gap-3">
+              <img 
+                src={LOGO_URL} 
+                alt="98_florist Logo" 
+                className="h-12 w-12 rounded-full object-cover border-2 border-primary"
+                referrerPolicy="no-referrer"
+              />
+              <span className="font-serif text-2xl font-bold text-primary tracking-tight">
+                98_florist
+              </span>
+            </div>
+            <p className="text-gray-500 leading-relaxed">
+              Solusi landscape profesional untuk keindahan dan kesejukan hunian Anda. Kami melayani desain, pembuatan, dan perawatan taman.
+            </p>
+            <div className="flex gap-4">
+              <a href="#" className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+                <Instagram size={20} />
+              </a>
+              <a href="https://wa.me/082121323992" className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+                <Phone size={20} />
+              </a>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="font-bold text-lg mb-6 text-primary">Navigasi</h4>
+            <ul className="space-y-4">
+              {['Beranda', 'Tentang Kami', 'Layanan', 'Portofolio', 'Kontak'].map((item) => (
+                <li key={item}>
+                  <a href={`#${item.toLowerCase().replace(' ', '')}`} className="text-gray-500 hover:text-accent transition-colors">
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h4 className="font-bold text-lg mb-6 text-primary">Layanan</h4>
+            <ul className="space-y-4 text-gray-500">
+              <li>Taman Minimalis</li>
+              <li>Taman Tropis</li>
+              <li>Vertical Garden</li>
+              <li>Kolam Hias & Koi</li>
+              <li>Gazebo & Hardscape</li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="font-bold text-lg mb-6 text-primary">Kontak Kami</h4>
+            <ul className="space-y-4">
+              <li className="flex gap-3 text-gray-500">
+                <MapPin className="text-accent shrink-0" size={20} />
+                <span>Melayani Jabodetabek & Jawa Barat</span>
+              </li>
+              <li className="flex gap-3 text-gray-500">
+                <Phone className="text-accent shrink-0" size={20} />
+                <span>0821-2132-3992</span>
+              </li>
+              <li className="flex gap-3 text-gray-500">
+                <Mail className="text-accent shrink-0" size={20} />
+                <span>info@98florist.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="pt-12 border-t border-gray-100 text-center text-gray-400 text-sm">
+          <p>© {new Date().getFullYear()} 98_florist. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  );
+}
