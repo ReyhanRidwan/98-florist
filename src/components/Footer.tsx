@@ -1,6 +1,5 @@
 import { Instagram, Phone, MapPin, Mail } from 'lucide-react';
-
-const LOGO_URL = "https://scontent.xx.fbcdn.net/v/t1.15752-9/666637501_902738225919407_1453720350393172042_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=9f807c&_nc_ohc=V2HmJpghRcUQ7kNvwFHNxEJ&_nc_oc=Adr8Gj79HyD7Fk7Ds0T5O7sMbqxefbwrn4xfTeMKWFK6hp0l2BcNknPe0sPOx4Y-_39xKD8izrr5PpeBYSuWp7OW&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&_nc_ss=7a32e&oh=03_Q7cD5AF25lpgCkctKosfAoCB4ybv-MJ1UQxRYqoeWMuLjtqyZg&oe=6A019323";
+import { LOGO_URL } from '@/src/data/config';
 
 export default function Footer() {
   return (

@@ -1,23 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-
-const SLIDES = [
-  {
-    id: 1,
-    image: "https://dpa79oyyyfxcd.cloudfront.net/laravel/design/20b70250-67fa-43ee-a247-41a22a23dd0f.png",
-    subtitle: "Desain Taman",
-    title: "Wujudkan Taman Impian Anda",
-    description: "Solusi landscape profesional untuk keindahan hunian Anda.",
-  },
-  {
-    id: 2,
-    image: "https://platinumadisentosa.com/wp-content/uploads/2025/02/Ternyata-Begini-Cara-Membuat-Kolam-Ikan-Ideal-dan-Nyaman-1536x864.jpg",
-    subtitle: "Kolam Koi",
-    title: "Kesejukan Air di Rumah",
-    description: "Pembuatan kolam hias dan koi dengan sistem filtrasi modern.",
-  }
-];
+import { SLIDES } from '@/src/data/config';
 
 export default function Hero() {
   const [current, setCurrent] = useState(0);
@@ -49,7 +33,7 @@ export default function Hero() {
           {/* Background Image */}
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: `url(${SLIDES[current].image})` }}
+            style={{ backgroundImage: `url("${SLIDES[current].image}")` }}
           >
             <div className="absolute inset-0 bg-black/40" />
           </div>

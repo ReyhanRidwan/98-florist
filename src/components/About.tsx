@@ -1,5 +1,6 @@
 import { motion, useInView } from 'motion/react';
 import { useRef, useState, useEffect } from 'react';
+import { ABOUT_IMAGE } from '@/src/data/config';
 
 const STATS = [
   { label: "Proyek Selesai", value: 150, suffix: "+" },
@@ -54,7 +55,7 @@ export default function About() {
           >
             <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="https://instagram.fcgk33-1.fna.fbcdn.net/v/t1.15752-9/657762933_1420976045996876_5059208154390473513_n.jpg?stp=dst-jpg_e15_tt6&_nc_cat=101&ccb=7-5&_nc_sid=fc17b8&efg=eyJxZV9ncm91cHMiOlsiaWdkX2Jlc3RfZWZmb3J0X2ltYWdlOnRlc3QiXX0%3D&_nc_ohc=O6tSPjPnyDoQ7kNvwH16T7I&_nc_oc=AdpGZutdkhBO1X8ULfDbeJqJHoMBkqUV3Q854IqfEIOOycw3co2f74W7zvGPPNtzh580WI95fvj1KTApetXfLzqh&_nc_zt=23&_nc_ht=instagram.fcgk33-1.fna&_nc_ss=7a3a8&oh=03_Q7cD5AGfORrlpbuslnilOZTEdSqMO_V0zw72eOlQTQJjXpK0pQ&oe=69FB3AEC"
+                src={ABOUT_IMAGE}
                 alt="Tentang 98_florist"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
