@@ -72,20 +72,20 @@ export const PROJECTS = [
     title: "Jalan Setapak Taman"
   },
   // Vertical Projects (9 items)
-  { id: 9, category: "Minimalis", image: "/images/portfolio_9.jpg", title: "Taman Minimalis Dalam Ruangan", aspect: "vertical" },
+  { id: 9, category: "Minimalis", image: "/images/p9.jpg", title: "Taman Minimalis Dalam Ruangan", aspect: "vertical" },
   { id: 10, category: "Minimalis", image: "/images/portfolio_10.jpg", title: "Modern Terrace Garden", aspect: "vertical" },
   { id: 11, category: "Tropis", image: "/images/portfolio_11.jpg", title: "Tropical Backyard Path", aspect: "vertical" },
   { id: 12, category: "Kolam Hias", image: "/images/portfolio_12_vertical.jpg", title: "Kolam Hias Minimalis", aspect: "vertical" },
-  { id: 13, category: "Minimalis", image: "/images/portfolio_13.jpg", title: "Minimalist Patio", aspect: "vertical" },
-  { id: 14, category: "Taman Kering", image: "/images/portfolio_14.jpg", title: "Side House Pond", aspect: "vertical" },
-  { id: 15, category: "Vertical Garden", image: "/images/portfolio_15.jpg", title: "Taman Vertikal Outdoor", aspect: "vertical" },
+  { id: 13, category: "Minimalis", image: "/images/p13.jpg", title: "Minimalist Patio", aspect: "vertical" },
+  { id: 14, category: "Taman Kering", image: "/images/p14.jpg", title: "Side House Pond", aspect: "vertical" },
+  { id: 15, category: "Vertical Garden", image: "/images/p15.jpg", title: "Taman Vertikal Outdoor", aspect: "vertical" },
   { id: 16, category: "Minimalis", image: "/images/portfolio_16.jpg", title: "Contemporary Garden Design", aspect: "vertical" },
   { id: 17, category: "Kolam Hias", image: "/images/portfolio_17.jpg", title: "Kolam Hias Tropis", aspect: "vertical" },
   
   // Horizontal Projects (5 items)
   { id: 18, category: "Minimalis", image: "/images/portfolio_18.jpg", title: "Zen Garden Relaxation", aspect: "horizontal" },
   { id: 19, category: "Taman Kering", image: "/images/portfolio_19.jpg", title: "Taman Kering Modern", aspect: "horizontal" },
-  { id: 20, category: "Taman Kering", image: "/images/portfolio_20.jpg", title: "Taman Kering Batu Alam", aspect: "horizontal" },
+  { id: 20, category: "Taman Kering", image: "/images/p20.jpg", title: "Taman Kering Batu Alam", aspect: "horizontal" },
   { id: 21, category: "Taman Kering", image: "/images/portfolio_21.jpg", title: "Taman Kering Indoor Restoran", aspect: "horizontal" },
   { id: 22, category: "Minimalis", image: "/images/portfolio_22_kolam.jpg", title: "Taman Minimalis Belakang Rumah", aspect: "horizontal" }
 ];

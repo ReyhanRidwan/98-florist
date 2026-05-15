@@ -62,7 +62,6 @@ export default function Portfolio() {
                     "w-full h-full object-cover group-hover:scale-110 transition-transform duration-700",
                     project.aspect === "vertical" ? "aspect-[3/4.5]" : project.aspect === "horizontal" ? "aspect-[16/10]" : "aspect-[4/3]"
                   )}
-                  referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 pointer-events-none">
                   <span className="text-accent text-xs font-semibold uppercase tracking-wider mb-1">
