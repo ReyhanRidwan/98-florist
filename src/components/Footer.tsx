@@ -1,7 +1,9 @@
-import { Instagram, Phone, MapPin, Mail } from 'lucide-react';
+import { Instagram, Phone, MapPin, Mail, Flower2 } from 'lucide-react';
 import { LOGO_URL } from '@/src/data/config';
+import { useState } from 'react';
 
 export default function Footer() {
+  const [logoError, setLogoError] = useState(false);
   return (
     <footer className="bg-white pt-24 pb-12 border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-6">
@@ -9,12 +11,18 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-6">
             <div className="flex items-center gap-3">
-              <img 
-                src={LOGO_URL} 
-                alt="98_florist Logo" 
-                className="h-12 w-12 rounded-full object-cover border-2 border-primary"
-                referrerPolicy="no-referrer"
-              />
+              {logoError ? (
+                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center border-2 border-primary">
+                  <Flower2 className="h-8 w-8 text-primary" />
+                </div>
+              ) : (
+                <img 
+                  src={LOGO_URL} 
+                  alt="98_florist Logo" 
+                  className="h-12 w-12 rounded-full object-cover border-2 border-primary"
+                  onError={() => setLogoError(true)}
+                />
+              )}
               <span className="font-serif text-2xl font-bold text-primary tracking-tight">
                 98_florist
               </span>

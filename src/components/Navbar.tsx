@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, Flower2 } from 'lucide-react';
 import { cn } from '@/src/lib/utils';
 import { LOGO_URL } from '@/src/data/config';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [logoError, setLogoError] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,12 +34,18 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <img 
-            src={LOGO_URL} 
-            alt="98_florist Logo" 
-            className="h-10 w-10 rounded-full object-cover border-2 border-primary"
-            referrerPolicy="no-referrer"
-          />
+          {logoError ? (
+            <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center border-2 border-primary">
+              <Flower2 className="h-6 w-6 text-primary" />
+            </div>
+          ) : (
+            <img 
+              src={LOGO_URL} 
+              alt="98_florist Logo" 
+              className="h-10 w-10 rounded-full object-cover border-2 border-primary"
+              onError={() => setLogoError(true)}
+            />
+          )}
           <span className={cn(
             "font-serif text-xl font-bold tracking-tight",
             isScrolled ? "text-primary" : "text-white"

@@ -58,7 +58,6 @@ export default function About() {
                 src={ABOUT_IMAGE}
                 alt="Tentang 98_florist"
                 className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
               />
             </div>
             <div className="absolute -bottom-8 -right-8 bg-accent p-8 rounded-2xl hidden md:block shadow-lg">
