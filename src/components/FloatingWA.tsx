@@ -1,10 +1,11 @@
 import { motion } from 'motion/react';
 import { Phone } from 'lucide-react';
+import { WA_LINK } from '@/src/data/config';
 
 export default function FloatingWA() {
   return (
     <motion.a
-      href="https://wa.me/082121323992"
+      href={WA_LINK}
       target="_blank"
       rel="noopener noreferrer"
       initial={{ scale: 0, opacity: 0 }}

@@ -1,6 +1,8 @@
 import { motion } from 'motion/react';
 import { Phone } from 'lucide-react';
 
+import { PHONE_NUMBER, WA_LINK } from '@/src/data/config';
+
 export default function CTA() {
   return (
     <section id="kontak" className="py-24 px-6">
@@ -31,7 +33,7 @@ export default function CTA() {
             transition={{ delay: 0.2 }}
           >
             <a
-              href="https://wa.me/082121323992"
+              href={WA_LINK}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-accent text-white px-10 py-5 rounded-full text-xl font-bold hover:bg-accent/90 transition-all transform hover:scale-105 shadow-xl"

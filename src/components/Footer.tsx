@@ -1,5 +1,5 @@
 import { Instagram, Phone, MapPin, Mail, Flower2 } from 'lucide-react';
-import { LOGO_URL } from '@/src/data/config';
+import { LOGO_URL, PHONE_NUMBER, WA_LINK } from '@/src/data/config';
 import { useState } from 'react';
 
 export default function Footer() {
@@ -34,7 +34,7 @@ export default function Footer() {
               <a href="#" className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
                 <Instagram size={20} />
               </a>
-              <a href="https://wa.me/082121323992" className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+              <a href={WA_LINK} className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
                 <Phone size={20} />
               </a>
             </div>
@@ -76,7 +76,7 @@ export default function Footer() {
               </li>
               <li className="flex gap-3 text-gray-500">
                 <Phone className="text-accent shrink-0" size={20} />
-                <span>0821-2132-3992</span>
+                <span>{PHONE_NUMBER}</span>
               </li>
               <li className="flex gap-3 text-gray-500">
                 <Mail className="text-accent shrink-0" size={20} />

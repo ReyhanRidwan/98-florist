@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, Phone, Flower2 } from 'lucide-react';
 import { cn } from '@/src/lib/utils';
-import { LOGO_URL } from '@/src/data/config';
+import { LOGO_URL, WA_LINK } from '@/src/data/config';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -69,7 +69,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="https://wa.me/082121323992"
+            href={WA_LINK}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-primary text-white px-5 py-2 rounded-full text-sm font-medium flex items-center gap-2 hover:bg-primary/90 transition-all"
@@ -111,7 +111,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="https://wa.me/082121323992"
+              href={WA_LINK}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-primary text-white px-6 py-3 rounded-full text-center font-medium flex items-center justify-center gap-2"

@@ -3,6 +3,9 @@
 
 export const LOGO_URL = "https://res.cloudinary.com/di6ziqvtp/image/upload/q_auto/f_auto/v1778858203/98_florist_logo_1_ydhmxq.jpg";
 
+export const PHONE_NUMBER = "+62 821-2132-3992";
+export const WA_LINK = "https://wa.me/6282121323992";
+
 export const SLIDES = [
     {
       id: 1,
