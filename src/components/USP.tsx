@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { CheckCircle2, ShieldCheck, Clock, Wallet } from 'lucide-react';
+import { USP_IMAGE } from '@/src/data/config';
 
 const USPs = [
   {
@@ -78,7 +79,7 @@ export default function USP() {
             <div className="aspect-square rounded-full border-2 border-accent/30 p-8">
               <div className="w-full h-full rounded-full overflow-hidden">
                 <img
-                  src="https://scontent.xx.fbcdn.net/v/t1.15752-9/658917299_1254254786860905_4129162894248003456_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=9f807c&_nc_ohc=K7J2P7Xd0TcQ7kNvwEmK3e3&_nc_oc=AdqizmnX7TZtC0wysxB92RVzme--Q81VphT0C5dw7LUREaGdzfJDX0XQj_aIRyw6g-OpIM8iE2UTIZ9nwq-u0UKe&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&_nc_ss=7a32e&oh=03_Q7cD5AFIJq2BOcWsY3XqVLDr1fdW1C5MTDabEFM4OVBhREN_FA&oe=69F75328"
+                  src={USP_IMAGE}
                   alt="Landscape Excellence"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"

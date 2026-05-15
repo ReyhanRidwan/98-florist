@@ -39,13 +39,13 @@ export default function Portfolio() {
           ))}
         </div>
 
-        {/* Masonry Grid */}
+        {/* Masonry-style Grid */}
         <motion.div 
           layout
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6"
         >
           <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project) => (
+            {filteredProjects.map((project: any) => (
               <motion.div
                 key={project.id}
                 layout
@@ -53,15 +53,18 @@ export default function Portfolio() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4 }}
-                className="relative group aspect-[4/3] overflow-hidden rounded-2xl shadow-sm"
+                className="relative group overflow-hidden rounded-2xl shadow-sm break-inside-avoid mb-6"
               >
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className={cn(
+                    "w-full h-full object-cover group-hover:scale-110 transition-transform duration-700",
+                    project.aspect === "vertical" ? "aspect-[3/4.5]" : project.aspect === "horizontal" ? "aspect-[16/10]" : "aspect-[4/3]"
+                  )}
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 pointer-events-none">
                   <span className="text-accent text-xs font-semibold uppercase tracking-wider mb-1">
                     {project.category}
                   </span>
