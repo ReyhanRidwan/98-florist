@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from 'motion/react';
 import { Leaf, Palmtree, BrickWall, Sprout, Droplets, Home } from 'lucide-react';
 import { SERVICES_DATA } from '@/src/data/config';

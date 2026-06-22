@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -14,8 +15,18 @@ import Process from './components/Process';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 import FloatingWA from './components/FloatingWA';
+import { LOGO_URL } from './data/config';
 
 export default function App() {
+  useEffect(() => {
+    // Dynamically inject/update favicon using the business logo
+    const link = (document.querySelector("link[rel*='icon']") as HTMLLinkElement) || document.createElement('link');
+    link.type = 'image/jpeg';
+    link.rel = 'shortcut icon';
+    link.href = LOGO_URL;
+    document.getElementsByTagName('head')[0].appendChild(link);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background selection:bg-accent selection:text-white">
       <Navbar />
