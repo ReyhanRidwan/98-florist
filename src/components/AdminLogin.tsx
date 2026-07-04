@@ -16,6 +16,7 @@ export default function AdminLogin() {
       await signInWithPopup(auth, provider);
       navigate('/admin/dashboard');
     } catch (err: any) {
+      console.error(err);
       setError(err.message || 'Authentication failed');
     } finally {
       setIsLoggingIn(false);
