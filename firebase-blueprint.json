@@ -1,0 +1,40 @@
+{
+  "rules": {
+    "firestore": {
+      "collections": {
+        "portfolio": {
+          "security": {
+            "read": "true",
+            "write": "request.auth != null"
+          },
+          "schema": {
+            "type": "object",
+            "properties": {
+              "title": { "type": "string" },
+              "category": { "type": "string" },
+              "image": { "type": "string" },
+              "createdAt": { "type": "number" }
+            },
+            "required": ["title", "category", "image"]
+          }
+        },
+        "slides": {
+          "security": {
+            "read": "true",
+            "write": "request.auth != null"
+          },
+          "schema": {
+            "type": "object",
+            "properties": {
+              "title": { "type": "string" },
+              "subtitle": { "type": "string" },
+              "image": { "type": "string" },
+              "createdAt": { "type": "number" }
+            },
+            "required": ["title", "subtitle", "image"]
+          }
+        }
+      }
+    }
+  }
+}

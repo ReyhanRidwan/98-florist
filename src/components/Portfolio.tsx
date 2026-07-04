@@ -1,14 +1,44 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '@/src/lib/utils';
-import { CATEGORIES, PROJECTS } from '@/src/data/config';
+import { CATEGORIES, PROJECTS as DEFAULT_PROJECTS } from '@/src/data/config';
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '@/src/lib/firebase';
+
+interface Project {
+  id: string;
+  title: string;
+  category: string;
+  image: string;
+  aspect?: string;
+}
 
 export default function Portfolio() {
   const [activeTab, setActiveTab] = useState("Semua");
+  const [projects, setProjects] = useState<Project[]>([]);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, 'portfolio'));
+        const fetchedProjects: Project[] = [];
+        querySnapshot.forEach((doc) => {
+          fetchedProjects.push({ id: doc.id, ...doc.data() } as Project);
+        });
+        setProjects([...(DEFAULT_PROJECTS as Project[]), ...fetchedProjects]);
+      } catch (error) {
+        console.error("Error fetching projects", error);
+      }
+    };
+    fetchProjects();
+  }, []);
 
   const filteredProjects = activeTab === "Semua" 
-    ? PROJECTS 
-    : PROJECTS.filter(p => p.category === activeTab);
+    ? projects 
+    : projects.filter(p => p.category === activeTab);
+
+  // Dynamic categories based on fetched projects, or fallback to default
+  const categories = ["Semua", ...Array.from(new Set(projects.map(p => p.category)))];
 
   return (
     <section id="portofolio" className="py-24 bg-white">
@@ -23,7 +53,7 @@ export default function Portfolio() {
 
         {/* Filter Tabs */}
         <div className="flex flex-wrap justify-center gap-2 mb-12">
-          {CATEGORIES.map((cat) => (
+          {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveTab(cat)}
