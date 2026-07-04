@@ -84,13 +84,21 @@ export default function AdminDashboard() {
       
       if (data.secure_url) {
         setUploadStatus('Menyimpan ke database...');
-        // Add to firestore
-        await addDoc(collection(db, 'portfolio'), {
+        
+        // Add to firestore with timeout
+        const addDocPromise = addDoc(collection(db, 'portfolio'), {
           title: title || 'Untitled Project',
           category: category || 'Landscape',
           image: data.secure_url,
           createdAt: serverTimestamp()
         });
+
+        const timeoutPromise = new Promise((_, reject) => 
+          setTimeout(() => reject(new Error("Timeout: Koneksi ke database terputus. Silakan muat ulang halaman.")), 15000)
+        );
+
+        await Promise.race([addDocPromise, timeoutPromise]);
+        
         setTitle('');
         setCategory('');
         fetchItems();
